@@ -1,3 +1,6 @@
+import 'package:chicago_sightseeing_app/pages/event_page.dart';
+import 'package:chicago_sightseeing_app/pages/neighboorhood_page.dart';
+import 'package:chicago_sightseeing_app/pages/sports_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
@@ -43,20 +46,20 @@ class homeScreen extends StatelessWidget {
         bottom: const TabBar(
           indicatorColor: Colors.black,
           tabs: [
-            Tab(icon: Icon(Icons.home),text: "Neighbour"),
+            Tab(icon: Icon(Icons.home),text: "Neighboorhood"),
             Tab(icon: Icon(Icons.event),text: "Event"),
             Tab(icon: Icon(Icons.sports), text: "Sports"),
           ],
         ),
       ),
       ),
-      // body: TabBarView(
-      //   children: [
-      //     buildPage('Neighborhood'),
-      //     buildPage('Event'),
-      //     buildPage('ßports'),
-      //   ],
-      // ),
+      body: const TabBarView(
+        children: <Widget>[
+         Neighboorhoods(),
+         Events(),
+         Sports(),
+        ],
+      ),
     )
     );
   }
