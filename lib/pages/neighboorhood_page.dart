@@ -11,13 +11,19 @@ class Neighboorhoods extends StatelessWidget {
       body: ListView.builder(
           itemCount: neighborhoodList.length,
           itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(
-                onTap: () {},
-                title: Text(neighborhoodList[index].neighboorhood_name),
-                leading: CircleAvatar(
-                  backgroundImage: NetworkImage(neighborhoodList[index].imageURL),
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
+              child: Container(
+                height: 70,
+              child: Card(
+                child: ListTile(
+                  onTap: () {},
+                  title: Text(neighborhoodList[index].neighboorhood_name),
+                  leading: CircleAvatar(
+                    backgroundImage: NetworkImage(neighborhoodList[index].imageURL),
+                  ),
                 ),
+              ),
               ),
             );
           }
