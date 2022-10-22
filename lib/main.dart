@@ -12,10 +12,12 @@ class homeScreen extends StatelessWidget {
     return DefaultTabController(length: 3, child: Scaffold(
 
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(150),
+        preferredSize: Size.fromHeight(250),
       child: AppBar(
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(bottomRight: Radius.circular(20), bottomLeft: Radius.circular(20))
+            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),
+                topLeft: Radius.circular(50), topRight: Radius.circular(50)
+            )
         ),
         title: const Padding(padding: EdgeInsets.only(top: 30),
         child: Text("Welcome to Chicago",
@@ -30,7 +32,8 @@ class homeScreen extends StatelessWidget {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20)
+              bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),
+                topLeft: Radius.circular(50), topRight: Radius.circular(50)
             ),
               image: DecorationImage
                 (image: NetworkImage("https://media.cntraveler.com/photos/61e865ea62e14c3f706eea5c/16:9/w_2580,c_limit/Chicago_GettyImages-1180689542.jpg"),
