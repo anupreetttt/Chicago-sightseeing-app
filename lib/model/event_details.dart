@@ -43,7 +43,14 @@ class EventDetails extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.network(event_list.imageURL),
+          Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
+          child: Image.network(event_list.imageURL, width: 700, height: 200,)
+          ),
+          Text(event_list.event_name,
+          style: const TextStyle(
+            color: Colors.red, fontWeight: FontWeight.bold
+          ),
+          ),
           Padding(padding: const EdgeInsets.all(20),
           child: Text(event_list.description,
               style: const TextStyle(
