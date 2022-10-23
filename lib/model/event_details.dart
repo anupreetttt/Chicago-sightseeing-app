@@ -2,10 +2,16 @@ import '../model/events_list.dart';
 import 'package:flutter/material.dart';
 
 
-class EventDetails extends StatelessWidget {
+class EventDetails extends StatefulWidget {
   final Event_list event_list;
 
   const EventDetails(this.event_list);
+
+  @override
+  State<EventDetails> createState() => _EventDetailsState();
+}
+
+class _EventDetailsState extends State<EventDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +25,7 @@ class EventDetails extends StatelessWidget {
               )
           ),
           title:  Padding(padding: const EdgeInsets.only(top: 30),
-            child: Text(event_list.event_name,
+            child: Text(widget.event_list.event_name,
               style: const TextStyle(
                 color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25
               ),
@@ -44,22 +50,28 @@ class EventDetails extends StatelessWidget {
       body: Column(
         children: [
           Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
-          child: Image.network(event_list.imageURL, width: 700, height: 200)
+          child: Image.network(widget.event_list.imageURL, width: 700, height: 200)
           ),
-          Text(event_list.event_name,
+          Text(widget.event_list.event_name,
           style: const TextStyle(
             color: Colors.red, fontWeight: FontWeight.bold
-          ),
+            ),
           ),
           Padding(padding: const EdgeInsets.all(20),
-          child: Text(event_list.description,
+          child: Text(widget.event_list.description,
               style: const TextStyle(
             color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
               ),
           ),
           ),
-          Text(event_list.address)
+          Text(widget.event_list.address)
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+
+        },
+        child: const Text('click'),
       ),
     );
   }

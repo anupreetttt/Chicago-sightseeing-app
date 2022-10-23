@@ -16,15 +16,6 @@ class Events extends StatelessWidget {
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
               child: Container(
-                decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey,
-                      spreadRadius: 5,
-                      blurRadius: 12,
-                    )
-                  ]
-                ),
                 height: 70,
                 child: Card(
                   child: ListTile(
