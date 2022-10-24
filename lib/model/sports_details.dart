@@ -20,6 +20,7 @@ class _SportDetailsState extends State<SportDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFf6d2ac),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: AppBar(
@@ -58,24 +59,28 @@ class _SportDetailsState extends State<SportDetails> {
           ),
           Text(widget.sports_list.sports_name,
             style: const TextStyle(
-                color: Colors.red, fontWeight: FontWeight.bold
+                color: Colors.red, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 20
             ),
           ),
           Padding(padding: const EdgeInsets.all(20),
             child: Text(widget.sports_list.description,
               style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
               ),
             ),
           ),
-          Text(widget.sports_list.address)
+          Text(widget.sports_list.address,
+          style: const TextStyle(
+            color: Colors.white, fontFamily: 'Roboto', fontWeight: FontWeight.w700
+          ))
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           switchLayout();
         },
-        child: const Text('clicked'),
+        child: const Text('Trivia!',
+            style: TextStyle(fontWeight: FontWeight.bold)),
       ),
     );
   }
@@ -90,13 +95,13 @@ class _SportDetailsState extends State<SportDetails> {
             ),
             Text(widget.sports_list.sports_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
               child: Text(widget.sports_list.description,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),
@@ -117,13 +122,13 @@ class _SportDetailsState extends State<SportDetails> {
             ),
             Text(widget.sports_list.sports_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
               child: Text(widget.sports_list.sports_name,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),

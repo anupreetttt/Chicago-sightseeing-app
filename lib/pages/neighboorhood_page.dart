@@ -9,20 +9,30 @@ class Neighboorhoods extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF7DE5ED),
       body: ListView.builder(
           itemCount: neighborhoodList.length,
           itemBuilder: (context, index) {
             Neighboorhood_list neighboorhood_list = neighborhoodList[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
               child: Container(
-                height: 70,
+                decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0xFF81C6E8),
+                        spreadRadius: 2,
+                        blurRadius: 20,
+                      )
+                    ]
+                ),
+                height: 100,
               child: Card(
                 child: ListTile(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => NeighboorhoodDetails(neighboorhood_list)));
                   },
-                  title: Text(neighborhoodList[index].neighboorhood_name),
+                  title: Text(neighborhoodList[index].neighboorhood_name, style: TextStyle(),),
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(neighborhoodList[index].imageURL),
                   ),

@@ -9,14 +9,24 @@ class Sports extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFf6d2ac),
       body: ListView.builder(
           itemCount: sportsList.length,
           itemBuilder: (context, index) {
             Sports_list sports_list = sportsList[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
               child: Container(
-                height: 70,
+                decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        spreadRadius: 0.2,
+                        blurRadius: 10,
+                      )
+                    ]
+                ),
+                height: 100,
                 child: Card(
                   child: ListTile(
                     onTap: () {

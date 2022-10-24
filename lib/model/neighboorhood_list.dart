@@ -21,7 +21,7 @@ class Neighboorhood_list {
 
 List<Neighboorhood_list> neighborhoodList = [
   Neighboorhood_list(
-    imageURL: 'https://media.gettyimages.com/photos/magnificent-mile-picture-id584499267?k=20&m=584499267&s=612x612&w=0&h=gDzxTeiAYiasnc3IZfzCPN4ApC5jqAK5nRsCuQ4P8lQ=',
+      imageURL: 'https://media.gettyimages.com/photos/magnificent-mile-picture-id584499267?k=20&m=584499267&s=612x612&w=0&h=gDzxTeiAYiasnc3IZfzCPN4ApC5jqAK5nRsCuQ4P8lQ=',
       neighboorhood_name: 'Magnificent Mile',
       description: "Chicago's most prominent shopping area is called The Magnificent Mile. The crowded, lively district is home to upmarket stores, designer boutiques, hip restaurants, and opulent hotels. The neo-Gothic Tribune Tower, the terracotta Wrigley Building skyscraper, the historic Chicago Water Tower, and the 100-story John Hancock Center, which includes a rooftop observation deck with fine dining and panoramic city views, are among notable landmarks.",
       address: '875 North Michigan Ave',

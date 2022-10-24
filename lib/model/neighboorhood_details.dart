@@ -15,10 +15,10 @@ class NeighboorhoodDetails extends StatefulWidget {
 class _NeighboorhoodDetailsState extends State<NeighboorhoodDetails> {
   bool check = true;
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF67B7D1),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: AppBar(
@@ -50,37 +50,43 @@ class _NeighboorhoodDetailsState extends State<NeighboorhoodDetails> {
           ),
         ),
       ),
-      body: Column(
+      body:
+      Column(
         children: [
           Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
               child: Image.network(widget.neighboorhood_list.imageURL, width: 700, height: 200)
           ),
           Text(widget.neighboorhood_list.neighboorhood_name,
             style: const TextStyle(
-                color: Colors.red, fontWeight: FontWeight.bold
+                color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
             ),
           ),
           Padding(padding: const EdgeInsets.all(20),
             child: Text(widget.neighboorhood_list.description,
               style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
               ),
             ),
           ),
-          Text(widget.neighboorhood_list.address)
+          Text(widget.neighboorhood_list.address,
+              style: const TextStyle(
+              color: Colors.white
+          ))
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           switchLayout();
         },
-        child: const Text('clicked'),
+        child: const Text('Trivia!',
+            style: TextStyle(fontWeight: FontWeight.bold)),
       ),
     );
   }
 
   void switchLayout() {
     if(check == true) {
+      check = false;
       setState(() {
         body: Column(
           children: [
@@ -89,13 +95,13 @@ class _NeighboorhoodDetailsState extends State<NeighboorhoodDetails> {
             ),
             Text(widget.neighboorhood_list.neighboorhood_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
               child: Text(widget.neighboorhood_list.description,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),
@@ -104,33 +110,35 @@ class _NeighboorhoodDetailsState extends State<NeighboorhoodDetails> {
         );
         print("Clicked working");
 
-        check = false;
       });
 
     } else {
+      check = true;
       setState(() {
         body: Column(
           children: [
             Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
-                child: Image.network(widget.neighboorhood_list.imageURL, width: 700, height: 200)
+                child: Image.network(widget.neighboorhood_list.triviaImage, width: 700, height: 200)
             ),
             Text(widget.neighboorhood_list.neighboorhood_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
-              child: Text(widget.neighboorhood_list.description,
+              child: Text(widget.neighboorhood_list.funfact,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),
-            Text(widget.neighboorhood_list.address)
+            Text(widget.neighboorhood_list.address,
+            style: const TextStyle(
+                color: Colors.white, fontFamily: 'Roboto', fontWeight: FontWeight.w700
+            ),)
           ],
         );
         print("not working");
-        check = true;
       });
     }
   }

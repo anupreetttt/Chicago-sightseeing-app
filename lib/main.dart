@@ -3,7 +3,8 @@ import 'package:chicago_sightseeing_app/pages/neighboorhood_page.dart';
 import 'package:chicago_sightseeing_app/pages/sports_page.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
+  debugShowCheckedModeBanner: false,
   home: homeScreen()
 ));
 
@@ -13,7 +14,6 @@ class homeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(length: 3, child: Scaffold(
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(250),
       child: AppBar(
@@ -25,7 +25,7 @@ class homeScreen extends StatelessWidget {
         title: const Padding(padding: EdgeInsets.only(top: 30),
         child: Text("Welcome to Chicago",
         style: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25,
+          color: Colors.black, fontFamily: 'Roboto-LightItalic', fontWeight: FontWeight.w500, fontSize: 25,
           ),
         ),
         ),

@@ -9,26 +9,25 @@ class Events extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF81C6E8),
       body: ListView.builder(
           itemCount: eventList.length,
           itemBuilder: (context, index) {
             Event_list event_list = eventList[index];
             return Padding(
-              padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
               child: Container(
                 decoration: const BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey,
-                      spreadRadius: 5,
-                      blurRadius: 12,
+                      color: Colors.lightBlueAccent,
+                      spreadRadius: 2,
+                      blurRadius: 10,
                     )
                   ]
                 ),
-                height: 70,
-                child: Hero(
-                  tag: 'image-${event_list.imageURL}',
-                  child: Card(
+                height: 100,
+                child: Card(
                     child: ListTile(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(builder: (context) => EventDetails(event_list)));
@@ -39,7 +38,6 @@ class Events extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
               ),
             );
           }

@@ -18,6 +18,7 @@ class _EventDetailsState extends State<EventDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF81C6E8),
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: AppBar(
@@ -56,24 +57,28 @@ class _EventDetailsState extends State<EventDetails> {
           ),
           Text(widget.event_list.event_name,
           style: const TextStyle(
-            color: Colors.red, fontWeight: FontWeight.bold
+              color: Colors.red, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 20
             ),
           ),
           Padding(padding: const EdgeInsets.all(20),
           child: Text(widget.event_list.description,
               style: const TextStyle(
-            color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
               ),
             ),
           ),
-          Text(widget.event_list.address)
+          Text(widget.event_list.address,
+              style: const TextStyle(
+              color: Colors.white
+          ))
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           switchLayout();
         },
-        child: const Text('clicked'),
+        child: const Text('Trivia!',
+            style: TextStyle(fontWeight: FontWeight.bold)),
       ),
     );
   }
@@ -88,13 +93,13 @@ class _EventDetailsState extends State<EventDetails> {
             ),
             Text(widget.event_list.event_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
-              child: Text(widget.event_list.description,
+              child: Text(widget.event_list.funfact,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),
@@ -115,17 +120,21 @@ class _EventDetailsState extends State<EventDetails> {
             ),
             Text(widget.event_list.event_name,
               style: const TextStyle(
-                  color: Colors.red, fontWeight: FontWeight.bold
+                  color: Colors.red, fontWeight: FontWeight.bold, fontSize: 20
               ),
             ),
             Padding(padding: const EdgeInsets.all(20),
               child: Text(widget.event_list.funfact,
                 style: const TextStyle(
-                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                  color: Colors.black, fontFamily: 'Roboto', fontWeight: FontWeight.w700, fontSize: 12,
                 ),
               ),
             ),
-            Text(widget.event_list.address)
+            Text(widget.event_list.address,
+             style: const TextStyle(
+                 color: Colors.white, fontFamily: 'Roboto', fontWeight: FontWeight.w700
+             ),
+        )
           ],
         );
         print("not working");
