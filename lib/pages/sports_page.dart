@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../model/sports_details.dart';
 import '../model/sports_list.dart';
 
 class Sports extends StatelessWidget {
@@ -11,13 +12,17 @@ class Sports extends StatelessWidget {
       body: ListView.builder(
           itemCount: sportsList.length,
           itemBuilder: (context, index) {
+            Sports_list sports_list = sportsList[index];
             return Padding(
               padding: const EdgeInsets.symmetric(vertical: .0, horizontal: 4.0),
               child: Container(
                 height: 70,
                 child: Card(
                   child: ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => SportDetails(sports_list)));
+
+                    },
                     title: Text(sportsList[index].sports_name),
                     leading: CircleAvatar(
                       backgroundImage: NetworkImage(sportsList[index].imageURL),

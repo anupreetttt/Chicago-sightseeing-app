@@ -12,10 +12,12 @@ class EventDetails extends StatefulWidget {
 }
 
 class _EventDetailsState extends State<EventDetails> {
+  bool check = true;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(250),
         child: AppBar(
@@ -62,17 +64,73 @@ class _EventDetailsState extends State<EventDetails> {
               style: const TextStyle(
             color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
               ),
-          ),
+            ),
           ),
           Text(widget.event_list.address)
         ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-
+          switchLayout();
         },
-        child: const Text('click'),
+        child: const Text('clicked'),
       ),
     );
+  }
+
+  void switchLayout() {
+    if(check == true) {
+      setState(() {
+        body: Column(
+          children: [
+            Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
+                child: Image.network(widget.event_list.imageURL, width: 700, height: 200)
+            ),
+            Text(widget.event_list.event_name,
+              style: const TextStyle(
+                  color: Colors.red, fontWeight: FontWeight.bold
+              ),
+            ),
+            Padding(padding: const EdgeInsets.all(20),
+              child: Text(widget.event_list.description,
+                style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                ),
+              ),
+            ),
+            Text(widget.event_list.address)
+          ],
+        );
+        print("Clicked working");
+
+        check = false;
+      });
+
+    } else {
+      setState(() {
+        body: Column(
+          children: [
+            Padding(padding: const EdgeInsets.only(top: 30, bottom: 20),
+                child: Image.network(widget.event_list.triviaImage, width: 700, height: 200)
+            ),
+            Text(widget.event_list.event_name,
+              style: const TextStyle(
+                  color: Colors.red, fontWeight: FontWeight.bold
+              ),
+            ),
+            Padding(padding: const EdgeInsets.all(20),
+              child: Text(widget.event_list.funfact,
+                style: const TextStyle(
+                  color: Colors.black, fontWeight: FontWeight.bold, fontSize: 12,
+                ),
+              ),
+            ),
+            Text(widget.event_list.address)
+          ],
+        );
+        print("not working");
+        check = true;
+      });
+    }
   }
 }
