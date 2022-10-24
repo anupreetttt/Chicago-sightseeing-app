@@ -26,14 +26,17 @@ class Events extends StatelessWidget {
                   ]
                 ),
                 height: 70,
-                child: Card(
-                  child: ListTile(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => EventDetails(event_list)));
-                    },
-                    title: Text(eventList[index].event_name),
-                    leading: CircleAvatar(
-                      backgroundImage: NetworkImage(eventList[index].imageURL),
+                child: Hero(
+                  tag: 'image-${event_list.imageURL}',
+                  child: Card(
+                    child: ListTile(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => EventDetails(event_list)));
+                      },
+                      title: Text(eventList[index].event_name),
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(eventList[index].imageURL),
+                      ),
                     ),
                   ),
                 ),
